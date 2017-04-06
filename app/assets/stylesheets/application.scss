@@ -137,6 +137,11 @@
   }
 }
 
+.locale {
+  float: right;
+  margin: -0.25em 0.1em;
+}
+
  @media all and (max-width: 800px) {
    #columns {
      flex-direction: column-reverse;

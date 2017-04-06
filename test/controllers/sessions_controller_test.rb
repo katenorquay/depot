@@ -24,4 +24,9 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to store_index_url
   end
 
+  test "should fail to access admin page" do
+    delete logout_url
+    get products_url
+    assert_redirected_to login_url
+  end
 end
