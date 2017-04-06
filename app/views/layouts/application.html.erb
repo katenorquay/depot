@@ -10,7 +10,7 @@
 
   <body class='<%= controller.controller_name %>'>
     <div id='banner'>
-      <span class="title"></span>
+      <span class="title">Book Shop</span>
     </div>
     <div id="columns">
       <div id="side">
@@ -27,6 +27,14 @@
           <li><a href="#">News</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
+        <% if session[:user_id] %>
+          <ul>
+            <li><%= link_to 'Orders', orders_path %></li>
+            <li><%= link_to 'Products', products_path %></li>
+            <li><%= link_to 'Users', users_path %></li>
+          </ul>
+          <%= button_to 'Logout', logout_path, method: :delete %>
+        <% end %>
       </div>
       <div id="main">
         <%= yield %>
